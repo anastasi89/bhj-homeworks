@@ -21,9 +21,6 @@ hasTooltipLinks.forEach(item => {
         if (!tooltip) {
             item.insertAdjacentElement('afterend', createTooltip(item.title, top, left));
         } else {
-            if (!item.nextElementSibling.classList.contains('tooltip_active')) {
-                item.insertAdjacentElement('afterend', createTooltip(item.title, top, left));
-            }
             tooltip.remove();
         }
     })
