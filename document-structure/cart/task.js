@@ -31,8 +31,8 @@ productAddButton.forEach(item => {
 		const productInCart = cartProductsCollection.find(item => item.dataset.id === productItem.dataset.id);
 
 		if (productInCart) {
-			const productInCartCount = cartProducts.querySelector('.cart__product-count');
-			productInCartCount.textContent = productAmount.textContent;
+			const productInCartCount = productInCart.querySelector('.cart__product-count');
+			productInCartCount.textContent = Number(productInCartCount.textContent) + Number(productAmount.textContent);
 		} else {
 			cartProducts.insertAdjacentHTML('beforeend', `<div class="cart__product" data-id="${productItem.dataset.id}"><img class="cart__product-image" src="${productImg.src}"><div class="cart__product-count">${+productAmount.textContent}</div>`);
 		}

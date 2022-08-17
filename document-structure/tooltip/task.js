@@ -6,7 +6,7 @@ const createTooltip = (title, top, left) => {
 	tooltip.classList.add('tooltip');
 	tooltip.classList.toggle('tooltip_active');
 	tooltip.style.left = left + 'px';
-	tooltip.style.top = (top + 20) + 'px';
+	tooltip.style.top = (top + 18) + 'px';
 
 	return tooltip;
 }
@@ -20,9 +20,7 @@ hasTooltipLinks.forEach(item => {
 		if (!tooltip) {
 			item.insertAdjacentElement('afterend', createTooltip(item.title, top, left));
 		} else {
-			if (!item.nextElementSibling.classList.contains('tooltip_active')) {
 				item.insertAdjacentElement('afterend', createTooltip(item.title, top, left));
-			}
 			tooltip.remove();
 		}
 	})
